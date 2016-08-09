@@ -29,7 +29,7 @@ GCC		= g++
 
 #Override default variables for this build
 #ARCH = x86
-#FIREBIRD=/usr/lib64/firebird
+#FIREBIRD=/usr/lib/x86_64-linux-gnu/firebird
 
 # Get version info
 MAJOR_VERSION = $(shell cat ../../SetupAttributes.h | grep "define MAJOR_VERSION" | cut -f 3)
@@ -54,7 +54,7 @@ ODBCMANAGER	= unixODBC
 endif
 
 ifeq ($(ARCH),x86_64)
-LIB = lib64
+LIB = lib/x86_64-linux-gnu
 else
 LIB = lib
 endif

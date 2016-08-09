@@ -12,7 +12,7 @@ endif
 $(warning ARCH is $(ARCH))
 
 ifeq ($(ARCH),x86_64)
-	UNIXODBCDIR = $(shell if [ -d /usr/lib64/unixODBC ]; then echo /usr/lib64/unixODBC; else echo /usr/lib64; fi)
+	UNIXODBCDIR = $(shell if [ -d /usr/lib/x86_64-linux-gnu/unixODBC ]; then echo /usr/lib/x86_64-linux-gnu/unixODBC; else echo /usr/lib/x86_64-linux-gnu; fi)
 else
 	UNIXODBCDIR = $(shell if [ -d /usr/lib/unixODBC ]; then echo /usr/lib/unixODBC; else echo /usr/lib; fi)
 endif
@@ -44,7 +44,7 @@ FBINCDIR	= $(shell if [ -f /usr/include/ibase.h ]; then echo /usr/include; else 
 endif
 ifeq (nul,$(FBLIBDIR))
 ifeq ($(ARCH),x86_64)
-FBLIBDIR	= $(shell if [ -f /usr/lib64/libfbclient.so ]; then echo /usr/lib64; else echo nul; fi)
+FBLIBDIR	= $(shell if [ -f /usr/lib/x86_64-linux-gnu/libfbclient.so ]; then echo /usr/lib/x86_64-linux-gnu; else echo nul; fi)
 else
 FBLIBDIR        = $(shell if [ -f /usr/lib/libfbclient.so ]; then echo /usr/lib; else echo nul; fi)
 endif
